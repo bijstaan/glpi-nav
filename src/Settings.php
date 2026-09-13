@@ -121,7 +121,7 @@ final class Settings
      * Menu labels this plugin overrides when it moves an entry.
      *
      * Only one is shipped, and it is not cosmetic. glpi-signal's suppression
-     * windows and glpi-major's customer announcements both call themselves
+     * windows and glpi-major's entity announcements both call themselves
      * "Maintenance windows"; they lived in different sectors, so nobody had to
      * care. Filing them side by side under Operations makes them
      * indistinguishable in the sidebar — and worse, GLPI decides which entry is

@@ -404,7 +404,7 @@ async function washedOut(page, selector) {
   console.log('\nNo two entries in one section share a name');
   // GLPI marks the active entry by comparing titles, so a duplicate name inside
   // a section lights both entries up on either page. glpi-signal's suppression
-  // windows and glpi-major's customer announcements were both "Maintenance
+  // windows and glpi-major's entity announcements were both "Maintenance
   // windows" until glpi-nav relabelled one of them.
   for (const name of SECTIONS) {
     const titles = (nav[name] || []).map((entry) => entry.text);
