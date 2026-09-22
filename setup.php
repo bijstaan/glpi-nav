@@ -44,6 +44,13 @@ function plugin_init_glpinav()
 
     $PLUGIN_HOOKS['csrf_compliant']['glpinav'] = true;
 
+    // The plugin's rights, on Administration > Profiles.
+    //
+    // Core stores a plugin's rights and saves them back with its own, but
+    // renders a form for its rights only — so without this tab the ones below
+    // are enforced everywhere and grantable nowhere but SQL.
+    Plugin::registerClass(\GlpiPlugin\Glpinav\Profile::class, ['addtabon' => ['Profile']]);
+
     // The only functional hook in the plugin. Fires inside Html::header() and
     // Html::helpHeader() with the menu core just built; whatever we return is
     // what the sidebar, the breadcrumb and the context links are rendered from.
