@@ -33,7 +33,7 @@
 use GlpiPlugin\Glpinav\Layout;
 
 define('PLUGIN_GLPINAV_VERSION', '0.1.0');
-define('PLUGIN_GLPINAV_MIN_GLPI', '11.0');
+define('PLUGIN_GLPINAV_MIN_GLPI', '12.0');
 
 // Settings live under this config context.
 define('PLUGIN_GLPINAV_CONFIG_CONTEXT', 'plugin:glpinav');

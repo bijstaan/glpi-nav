@@ -297,6 +297,15 @@ final class Layout
         if (!isset($_SESSION['glpimenu']) || !is_array($_SESSION['glpimenu'])) {
             return;
         }
+        // The hook also fires from Html::helpHeader() with the helpdesk menu,
+        // and a central user can land on such a page (glpi-major's portal, the
+        // client portal). Writing that back would replace the central sidebar
+        // on every later page until the next login. Only a menu with the same
+        // sectors as the cached one is the central menu.
+        $sectors = static fn(array $m): array => array_keys(self::unfold($m));
+        if ($sectors($menu) !== $sectors($_SESSION['glpimenu'])) {
+            return;
+        }
         $_SESSION['glpimenu'] = $menu;
     }
 }
